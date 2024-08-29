@@ -33,51 +33,48 @@ class cylinder
         {
             this->height = height;
             this->radius = radius;
+            CalculateVolume();
         }
         void SetHeight(float h)
         {
-
-        
+            height = h;
+            CalculateVolume();
         }
         void SetRadius(float r)
         {
-
-
+            radius = r;
+            CalculateVolume();
         }
-        void GetHeight()
+        float GetHeight()
         {
-
-
+            return height;
         }
-        void GetRadius()
+        float GetRadius()
         {
-
-
+            return radius;
         }
         void CalculateVolume()
         {
-
-
+            volume = 3.14159f * radius * radius * height;
         }
-        void GetVolume()
+        float GetVolume()
         {
-
-
-
+            return volume;
         }
-}
+};
 
 int main()
 {
-
     cylinder cobj;
 
-    cobj.SetHeight();
-    cobj.SetRadius();
-    cobj.GetHeight();
-    cobj.GetRadius();
+    cobj.SetHeight(10.0f);
+    cobj.SetRadius(5.0f);
+
+    cout << "Height: " << cobj.GetHeight() << endl;
+    cout << "Radius: " << cobj.GetRadius() << endl;
+
     cobj.CalculateVolume();
-    cobj.GetVolume();
+    cout << "Volume: " << cobj.GetVolume() << endl;
 
     return 0;
 }
